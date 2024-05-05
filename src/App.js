@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import Form from './compoonents/Form';
+import websites from './models/myapplications';
 
 function App() {
+
+  // let [count, setCount] = useState(0)
+  // let [currentProject, setCurrentProject] = useState(websites[count])
+  
+  const chooseLanguage = () => {
+
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>My Projects</h1>
+      <h2>Feel Free to Filter by the checkboxes.</h2>
+      <Form languages={websites} />
+      
+
     </div>
   );
 }
