@@ -7,42 +7,19 @@ const Form = ({languages}) => {
   const languagesOnly = [...new Set(languages.flatMap(({languagesUsed}) => (languagesUsed)))]
   console.log(languagesOnly)
 
-  return (
-  <div>
-    <form className="formContainer">
-      <div>
-        <input type="checkbox" id="HTML" name="HTML" value="HTML" />
-        <label for="HTML">HTML</label>
-      </div>
-      <div>
-        <input type="checkbox" id="CSS" name="CSS" value="CSS" />
-        <label for="CSS">CSS</label>
-      </div>
-      <div>
-        <input type="checkbox" id="JavaScript" name="JavaScript" value="JavaScript" />
-        <label for="JavaScript">JavaScript</label>
-      </div>
-      <div>
-        <input type="checkbox" id="Node.js" name="Node.js" value="Node.js" />
-        <label for="Node.js">Node.js</label>
-      </div>
-      <div>
-        <input type="checkbox" id="Express" name="Express" value="Express" />
-        <label for="Express">Express</label>
-      </div>
-      <div>
-        <input type="checkbox" id="jsx" name="jsx" value="jsx" />
-        <label for="jsx">jsx</label>
-      </div>
-      <div>
-        <input type="checkbox" id="MongoDB" name="MongoDB" value="MongoDB" />
-        <label for="MongoDB">MongoDB</label>
-      </div>
-    </form>
-    <form>
+  const handleCheckbox = event => {
+    console.log(event.target.value)
+  }
 
+  return (
+    <form className="formContainer">
+      {languagesOnly.map(eachLanguages => (
+      <div>
+        <input type="checkbox" onChange={handleCheckbox} id={eachLanguages} name={eachLanguages} value={eachLanguages} />
+        <label for={eachLanguages}>{eachLanguages}</label>
+      </div>
+      ))}
     </form>
-  </div>
   )
 }
 export default Form
